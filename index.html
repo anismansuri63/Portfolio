@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name — iOS/Flutter developer. Projects, experience, skills, and contact." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Projects, experience, skills, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230ea5e9'/%3E%3Ctext x='50' y='58' font-family='Arial,Helvetica,sans-serif' font-size='48' text-anchor='middle' fill='white'%3EY%3C/text%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "",
+    "jobTitle": "Senior iOS Developer",
+    "sameAs": ["https://github.com/yourusername","https://www.linkedin.com/in/yourusername/"]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #11162a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #0ea5e9;
+      --accent: #22c55e;
+      --card: #0e1426;
+      --shadow: 0 10px 25px rgba(0,0,0,.3);
+    }
+    :root.light {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --brand: #0ea5e9;
+      --accent: #16a34a;
+      --card: #ffffff;
+      --shadow: 0 8px 24px rgba(2,6,23,.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif; background: var(--bg); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in oklab, var(--bg), transparent 40%); border-bottom: 1px solid color-mix(in oklab, var(--text), transparent 90%); z-index: 50; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+    .logo .dot { width: 10px; height: 10px; background: var(--brand); border-radius: 999px; box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 70%); }
+    .nav-links { display: flex; gap: 18px; font-size: 14px; color: var(--muted); }
+    .nav-links a { padding: 6px 10px; border-radius: 9px; transition: background .2s ease; }
+    .nav-links a:hover { background: color-mix(in oklab, var(--text), transparent 92%); color: var(--text); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); background: linear-gradient(180deg, color-mix(in oklab, var(--panel), transparent 0%), color-mix(in oklab, var(--panel), black 3%)); color: var(--text); box-shadow: var(--shadow); cursor: pointer; transition: transform .12s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: linear-gradient(180deg, color-mix(in oklab, var(--brand), white 15%), var(--brand)); border: 1px solid color-mix(in oklab, var(--brand), black 20%); color: white; }
+    .btn.ghost { background: transparent; box-shadow: none; }
+    .tag { display:inline-block; padding: 6px 10px; font-size: 12px; border-radius: 999px; color: white; background: linear-gradient(90deg, var(--brand), #6366f1); }
+    .grid { display: grid; gap: 20px; }
+    .hero { padding: 64px 0 24px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; }
+    .hero h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin: 0 0 10px; }
+    .hero p { color: var(--muted); margin: 10px 0 22px; font-size: 16px; }
+    .hero .actions { display:flex; gap: 10px; flex-wrap: wrap; }
+    .card { background: var(--card); border: 1px solid color-mix(in oklab, var(--text), transparent 88%); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
+    .section { padding: 18px 0 8px; }
+    h2.sec-title { font-size: 20px; margin: 0 0 14px; letter-spacing: .2px; }
+    .cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .skill { display:flex; align-items:center; justify-content:space-between; padding: 10px 12px; border-radius: 12px; border: 1px dashed color-mix(in oklab, var(--text), transparent 80%); }
+    .meter { height: 8px; background: color-mix(in oklab, var(--text), transparent 90%); border-radius: 999px; overflow: hidden; }
+    .meter > span { display: block; height: 100%; background: linear-gradient(90deg, var(--brand), #22c55e); }
+    .project { display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: start; }
+    .project img { border-radius: 12px; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); aspect-ratio: 1 / 1; object-fit: cover; }
+    .project .title { font-weight: 600; margin-bottom: 6px; }
+    .project .desc { color: var(--muted); font-size: 14px; }
+    .project .links { display:flex; gap: 10px; margin-top: 10px; }
+    .chips { display:flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: color-mix(in oklab, var(--text), transparent 88%); color: var(--text); }
+    .filters { display:flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .filters button { padding: 6px 10px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); background: transparent; color: var(--text); cursor: pointer; }
+    .filters button.active { background: var(--brand); color: white; border-color: var(--brand); }
+    .timeline { position: relative; margin-left: 6px; }
+    .timeline::before { content: ""; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: color-mix(in oklab, var(--text), transparent 85%); }
+    .step { position: relative; padding-left: 28px; margin-bottom: 16px; }
+    .step::before { content: ""; position: absolute; left: 0; top: 2px; width: 16px; height: 16px; border-radius: 99px; background: var(--brand); box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 75%); }
+    .step h3 { margin: 0; font-size: 16px; }
+    .step .meta { color: var(--muted); font-size: 13px; margin: 4px 0 8px; }
+    footer { padding: 28px 0 48px; color: var(--muted); text-align: center; border-top: 1px solid color-mix(in oklab, var(--text), transparent 90%); margin-top: 28px; }
+    .socials { display:flex; gap: 10px; }
+    .flex { display:flex; gap: 10px; align-items:center; }
+    .split { display:flex; gap: 10px; flex-wrap: wrap; align-items:center; justify-content: space-between; }
+    .contact { display:grid; grid-template-columns: 1fr; gap: 12px; }
+    .contact input, .contact textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); background: transparent; color: var(--text); }
+    .contact .row { display:grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      .cols-3 { grid-template-columns: 1fr; }
+      .cols-2 { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; }
+      .contact .row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><span class="dot"></span> <span>Your Name</span></div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <button class="btn ghost" id="themeBtn" aria-label="Toggle theme">🌓</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="tag">Open to Opportunities</span>
+        <h1>Hi, I’m <span style="color:var(--brand);">Your Name</span> — Senior iOS & Flutter Developer</h1>
+        <p>I build fast, accessible mobile apps and delightful user experiences. 9+ years in Swift/UIKit, SwiftUI, and cross‑platform with Flutter. Previously at TCS.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:you@example.com">Email Me</a>
+          <a class="btn ghost" href="./resume.pdf" download>Download CV</a>
+        </div>
+        <div class="socials" style="margin-top:14px;">
+          <a href="https://github.com/yourusername" aria-label="GitHub" title="GitHub">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.82 1.3 3.51.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.9 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/yourusername" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.84-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.17V23h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V23h-4V8z"/></svg>
+          </a>
+          <a href="https://x.com/yourusername" aria-label="X/Twitter" title="X">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.51 8.58L23 22h-6.828l-5.346-6.37L4.6 22H1.34l8.04-9.18L1 2h6.984l4.82 5.585L18.244 2Zm-1.197 18h1.86L7.052 4h-2L17.047 20Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="App screenshots collage" style="border-radius:12px;"/>
+          <div class="chips">
+            <span class="chip">Swift • SwiftUI • UIKit</span>
+            <span class="chip">Flutter • Dart</span>
+            <span class="chip">Firebase • REST</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="split">
+        <h2 class="sec-title">Projects</h2>
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button data-filter="ios" role="tab" aria-selected="false">iOS</button>
+          <button data-filter="flutter" role="tab" aria-selected="false">Flutter</button>
+          <button data-filter="web" role="tab" aria-selected="false">Web</button>
+        </div>
+      </div>
+      <div class="grid cols-2" id="projectList">
+        <!-- Project Card Template -->
+        <article class="card project" data-tags="ios swiftui">
+          <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=800&auto=format&fit=crop" alt="Quranic Ayah app screenshot"/>
+          <div>
+            <div class="title">Quranic Ayah — Daily Verse</div>
+            <p class="desc">SwiftUI app that displays a random ayah with translation and tafsir. Includes audio playback, archive, and sharing as image.</p>
+            <div class="chips"><span class="chip">SwiftUI</span><span class="chip">Audio</span><span class="chip">Tafsir API</span></div>
+            <div class="links">
+              <a class="btn" href="#">Live</a>
+              <a class="btn" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="flutter mobile">
+          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Tasbih counter app screenshot"/>
+          <div>
+            <div class="title">Tasbih Counter & Dhikr</div>
+            <p class="desc">Flutter app with customizable tasbih counter, haptic feedback, and cloud sync using Firebase.</p>
+            <div class="chips"><span class="chip">Flutter</span><span class="chip">Firebase</span></div>
+            <div class="links">
+              <a class="btn" href="#">Live</a>
+              <a class="btn" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="ios uikit objective-c">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Enterprise app screenshot"/>
+          <div>
+            <div class="title">Enterprise Device Risk Scanner</div>
+            <p class="desc">UIKit app for device risk scoring: firewall, anti‑malware, VPN checks with real‑time remediation tips.</p>
+            <div class="chips"><span class="chip">UIKit</span><span class="chip">Security</span></div>
+            <div class="links">
+              <a class="btn" href="#">Case Study</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="web react">
+          <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=800&auto=format&fit=crop" alt="Developer portfolio website"/>
+          <div>
+            <div class="title">Developer Portfolio (This Site)</div>
+            <p class="desc">Fully responsive, accessible single‑file portfolio with dark mode and tag filters. Deployable on GitHub Pages.</p>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Vanilla JS</span></div>
+            <div class="links">
+              <a class="btn" href="#">Repo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2 class="sec-title">Experience</h2>
+      <div class="card timeline">
+        <div class="step">
+          <h3>Senior iOS Developer — Tata Consultancy Services</h3>
+          <div class="meta">Apr 2023 — Present · Mumbai, IN</div>
+          <p>Lead iOS initiatives across SwiftUI and UIKit. Architected MVVM modules, implemented CI/CD with Bitrise, and integrated Firebase (Crashlytics, Analytics, Remote Config).</p>
+        </div>
+        <div class="step">
+          <h3>iOS Engineer — Previous Company</h3>
+          <div class="meta">2018 — 2023</div>
+          <p>Shipped multiple consumer apps with offline storage, REST APIs, push notifications, and maps (Google/Apple/HERE).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2 class="sec-title">Skills</h2>
+      <div class="grid cols-3">
+        <div class="card skill"><span>Swift / SwiftUI / UIKit</span><div class="meter" aria-label="Proficiency"><span style="width:92%"></span></div></div>
+        <div class="card skill"><span>Flutter / Dart</span><div class="meter"><span style="width:86%"></span></div></div>
+        <div class="card skill"><span>Objective‑C</span><div class="meter"><span style="width:70%"></span></div></div>
+        <div class="card skill"><span>Firebase / REST / GraphQL</span><div class="meter"><span style="width:84%"></span></div></div>
+        <div class="card skill"><span>CI/CD (Bitrise)</span><div class="meter"><span style="width:78%"></span></div></div>
+        <div class="card skill"><span>Unit Testing</span><div class="meter"><span style="width:76%"></span></div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="split">
+        <h2 class="sec-title">Contact</h2>
+        <span class="muted">Let’s build something great together.</span>
+      </div>
+      <div class="card">
+        <form class="contact" action="mailto:you@example.com" method="post" enctype="text/plain">
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+          </div>
+          <div>
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="5" required></textarea>
+          </div>
+          <div class="split">
+            <div class="flex">
+              <input id="copy" type="checkbox" />
+              <label for="copy">Send me a copy</label>
+            </div>
+            <button class="btn primary" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="split">
+          <div>© <span id="year"></span> Your Name</div>
+          <div class="flex">
+            <a href="#" class="btn ghost" aria-label="Theme" id="themeBtnFooter">🌓 Toggle</a>
+            <a href="#top" class="btn ghost">Back to top ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // ===== Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Theme toggle with localStorage
+    const root = document.documentElement;
+    const isLight = localStorage.getItem('theme') === 'light';
+    if (isLight) root.classList.add('light');
+
+    function toggleTheme() {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    }
+    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+    document.getElementById('themeBtnFooter').addEventListener('click', toggleTheme);
+
+    // ===== Project tag filters
+    const filterButtons = document.querySelectorAll('.filters button');
+    const projects = document.querySelectorAll('.project');
+
+    filterButtons.forEach(btn => btn.addEventListener('click', () => {
+      filterButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      const tag = btn.dataset.filter;
+      projects.forEach(card => {
+        const show = tag === 'all' || card.dataset.tags.includes(tag);
+        card.style.display = show ? 'grid' : 'none';
+      });
+    }));
+
+    // ===== Smooth scroll (native behavior in modern browsers)
+    document.documentElement.style.scrollBehavior = 'smooth';
+  </script>
+</body>
+</html>
